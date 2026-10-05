@@ -1,0 +1,9 @@
+DNS notes
+=========
+Authoritative/private DNS server: 10.7.24.103
+
+Expected records:
+app.team1.test -> 10.7.15.18
+api.team1.test -> 10.7.15.18
+
+The selected evidence contains successful dig output and a packet capture showing the DNS query/response.
