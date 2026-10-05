@@ -1,9 +1,22 @@
-DNS notes
-=========
-Authoritative/private DNS server: 10.7.24.103
+DNS Server: 10.7.24.103
+DNS Service: dnsmasq
+DNS Port: 53
 
-Expected records:
+Domain Resolution:
 app.team1.test -> 10.7.15.18
 api.team1.test -> 10.7.15.18
 
-The selected evidence contains successful dig output and a packet capture showing the DNS query/response.
+Nginx/TLS Load Balancer:
+10.7.15.18:8443
+
+Backend A:
+10.7.10.160:3001
+
+Backend B:
+10.7.9.47:3002
+
+DNS configuration:
+- DNS listens on 10.7.24.103 and localhost
+- Private/reverse lookup protection enabled
+- DNS query logging enabled
+- DNS cache size is 100
