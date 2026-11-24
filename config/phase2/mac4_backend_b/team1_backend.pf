@@ -1,0 +1,5 @@
+# Phase 2 Ext C — Backend B (Mac 4) isolation. Loaded into anchor com.apple/team1_backend
+# Only the edges may open TCP 3002: Mac 2 primary nginx (10.7.6.248) and Mac 3 standby nginx (10.7.2.169).
+edges = "{ 10.7.6.248, 10.7.2.169 }"
+pass  in log quick on en0 inet proto tcp from $edges to any port 3002 flags S/SA keep state
+block in log quick on en0 proto tcp from any to any port 3002
